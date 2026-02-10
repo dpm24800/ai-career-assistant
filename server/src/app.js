@@ -1,11 +1,20 @@
 import express from "express";
 import cors from "cors";
-import { testML } from "./services/mlService.js";
+import dotenv from "dotenv";
 
-const app = express();
+import { testML } from "./services/mlService.js";
+import { connectDB } from "./config/db.js";
+import resumeRoutes from "./routes/resumeRoutes.js";
+
+dotenv.config();
+connectDB();
+
+const app = express();   // ✅ create app FIRST
 
 app.use(cors());
 app.use(express.json());
+
+app.use("/api/resume", resumeRoutes);   // ✅ now valid
 
 app.get("/", (req,res)=>{
   res.send("Node API running");

@@ -239,7 +239,7 @@ Many beginner projects combine everything in one server — this project intenti
 
 ## Author
 
-Dipak Pulami Magar
+Dipak Pulami Magar  
 Aspiring Full-Stack + AI Developer
 
 ---
